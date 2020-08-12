@@ -1,32 +1,44 @@
 /************************************************************** Task 1: Warm-up! **************************************************************/
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
+let votingAge = 20
 
-
+if(votingAge > 18){
+    console.log(true)
+}
 
 
 
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
 
-
-
-
+let speaker = 'Loud';
+let volume = 'low'
+if(volume === 'high'){
+    speaker = 'Loud';
+}else if(volume === 'low'){
+    speaker = 'Quiet'
+}
+console.log(speaker);
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
+var year = Number('1999')
+    console.log(year);
 
 
 
 
 
 //Task d: Write a function to multiply a*b 
-
-
+const multiplyFunction = (num1, num2) => num1 * num2;
+console.log(multiplyFunction(34, 17));
 
 
 
 /************************************************************** Task 2 **************************************************************/
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
-
+let myAge = 20;
+let ageDogYears = myAge * 7;
+console.log(ageDogYears);
 
 
 
@@ -48,7 +60,18 @@
 // 7 - 12 months 4% of their body weight
 
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
-  
+//  function lbsDogFood(weight, age) {
+//      let bodyWeight = 5%;
+//      let age = 1 year
+//      if(weight >= 6 && weight <= 10 && age >= 1){
+//          bodyWeight = 4%; 
+//      }else if(weight >= 11 && weight <= 15 && age >= 1){
+//          bodyWeight = 3%;
+//      }else if(weight >= 15 && age >= 1 year){
+//          bodyWeight = 2%;
+//      }
+//      console.log(lbsDogFood(15, 1));
+     
 
 
 
@@ -59,9 +82,45 @@
 // it should return you won or you lost based on the rules of the game (you may need to look up the rules if you have not played before)
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
-
-  
-  
+     //Computer Move//
+function game (cpuMove){ 
+    const cpuMove = Math.floor(Math.random() * 3 +1);
+    let cpuMoveNum = 0;
+        if(cpuMove <=0.33){
+            cpuMove='rock';
+        }else if(cpuMove <=0.67){
+            cpuMove='paper';
+        }else{
+            cpuMove='scissors';
+        }
+    //Win or Lose//
+        if(myMove==cpuMove){
+            console.log('Draw');
+        }else{
+            outcome = true;
+            switch(myMove){
+                case 'rock':
+                    if(cpuMove=='paper'){
+                        outcome = false;{
+                    break;
+                case 'paper':
+                    if(cpuMove=='scissors'){
+                        outcome = false;{
+                    break;
+                case 'scissors':
+                    if(cpumove=='rock'){
+                        outcome = false;}
+                    break;
+             }
+             if(outcome){
+                 console.log('You win'); 
+             }else{
+                 console.log('You lose');
+             }
+        }
+    }    
+}
+console.log(game());
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
