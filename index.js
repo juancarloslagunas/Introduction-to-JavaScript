@@ -60,17 +60,18 @@ console.log(ageDogYears);
 // 7 - 12 months 4% of their body weight
 
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
-//  function lbsDogFood(weight, age) {
-//      let bodyWeight = 5%;
-//      let age = 1 year
-//      if(weight >= 6 && weight <= 10 && age >= 1){
-//          bodyWeight = 4%; 
-//      }else if(weight >= 11 && weight <= 15 && age >= 1){
-//          bodyWeight = 3%;
-//      }else if(weight >= 15 && age >= 1 year){
-//          bodyWeight = 2%;
-//      }
-//      console.log(lbsDogFood(15, 1));
+ function lbsDogFood(weight, age) {
+     let bodyWeight = .05;
+     if(weight >= 6 && weight <= 10 && age >= 1){
+        return bodyWeight = .04; 
+     }else if(weight >= 11 && weight <= 15 && age >= 1){
+        return bodyWeight = .03;
+     }else if(weight >= 15 && age >= 1){
+        return bodyWeight = .02;
+        
+     }
+    }
+     console.log(lbsDogFood(15, 1));
      
 
 
@@ -83,9 +84,8 @@ console.log(ageDogYears);
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
      //Computer Move//
-function game (cpuMove){ 
-    const cpuMove = Math.floor(Math.random() * 3 +1);
-    let cpuMoveNum = 0;
+function game (myMove){ 
+    cpuMove = Math.random();
         if(cpuMove <=0.33){
             cpuMove='rock';
         }else if(cpuMove <=0.67){
@@ -93,45 +93,42 @@ function game (cpuMove){
         }else{
             cpuMove='scissors';
         }
+        console.log(cpuMove);
     //Win or Lose//
         if(myMove==cpuMove){
             console.log('Draw');
         }else{
-            outcome = true;
-            switch(myMove){
-                case 'rock':
-                    if(cpuMove=='paper'){
-                        outcome = false;{
-                    break;
-                case 'paper':
-                    if(cpuMove=='scissors'){
-                        outcome = false;{
-                    break;
-                case 'scissors':
-                    if(cpumove=='rock'){
-                        outcome = false;}
-                    break;
-             }
-             if(outcome){
-                 console.log('You win'); 
-             }else{
+             if(myMove == 'rock' && cpuMove == 'paper' ){
+                 console.log('You lose'); 
+             }else if(myMove == 'paper' && cpuMove == 'scissors'){
                  console.log('You lose');
+             }else if(myMove == 'scissors' && cpuMove == 'rock'){ 
+                 console.log('You lose');
+             }else{
+                 console.log('You win');
              }
-        }
-    }    
+        }   
 }
-console.log(game());
+console.log(game('rock'));
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
-
+function kmMiles(value){
+ const kmMiles = (value * 0.62137119)
+ return kmMiles;
+    } 
+console.log(kmMiles(10));
 
 
 
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
-  
+  function ftCentimeter(value){
+      const ftCentimeter = (value * 30.48)
+      return ftCentimeter;
+  }
+  console.log(ftCentimeter(27));
 
 
 
@@ -140,7 +137,12 @@ console.log(game());
 // 99 bottles of soda on the wall
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
-  
+  function annoyingSong(starterNum){
+      for(let i = starterNum; i > 0; i--){ 
+       console.log(`${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i-1} bottles of soda on the wall`);
+      }
+    }
+    console.log(annoyingSong(5));
 
 
 
@@ -153,8 +155,21 @@ console.log(game());
 //70s should be Cs 
 //60s should be D 
 //and anything below 60 should be F
-  
-
+function letterGrade(grade){
+  grade = (Math.random() * 101);
+    if(grade <= 59){
+    console.log('F');
+    }else if(grade >= 60 && grade <= 69){ 
+    console.log('D');
+    }else if(grade >= 70 && grade <= 79){ 
+    console.log('C');
+    }else if(grade >= 80 && grade <= 89){
+    console.log('B');
+    }else{
+    console.log('A');
+    }
+}
+letterGrade();
   
   
 
